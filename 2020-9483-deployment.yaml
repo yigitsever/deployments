@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cve-2020-9483
+  labels:
+    app: skywalking
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: skywalking
+  template:
+    metadata:
+      labels:
+        app: skywalking
+    spec:
+      containers:
+      - name: skywalking
+        image: vulfocus/skywalking-cve_2020_9483:latest
+        ports:
+        - containerPort: 8080
