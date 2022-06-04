@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: webmin
+  name: webmin
+spec:
+  ports:
+  - name: 10000-30003
+    nodePort: 30003
+    port: 10000
+    protocol: TCP
+    targetPort: 10000
+  selector:
+    app: webmin
+  type: NodePort
+

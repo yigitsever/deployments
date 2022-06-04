@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cve-2019-15107
+  labels:
+    app: webmin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webmin
+  template:
+    metadata:
+      labels:
+        app: webmin
+    spec:
+      containers:
+      - name: webmin
+        image: vulhub/webmin:1.910
+        ports:
+        - containerPort: 10000
