@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cve-2020-25213
+  labels:
+    app: wp-file-manager
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wp-file-manager
+  template:
+    metadata:
+      labels:
+        app: wp-file-manager
+    spec:
+      containers:
+      - name: wp-file-manager
+        image: ridgesecuritydocker/cve-2020-25213:mywordpress1
+        ports:
+        - containerPort: 80
