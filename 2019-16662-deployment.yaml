@@ -3,19 +3,19 @@ kind: Deployment
 metadata:
   name: cve-2019-16662
   labels:
-    app: rConfig
+    app: rconfig
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: rConfig
+      app: rconfig
   template:
     metadata:
       labels:
-        app: rConfig
+        app: rconfig
     spec:
       containers:
-      - name: rConfig
+      - name: rconfig
         image: fab1ano/cve-2019-16662:latest
         ports:
         - containerPort: 8080

@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: rConfig
-  name: rConfig
+    app: rconfig
+  name: rconfig
 spec:
   ports:
   - name: 8080-30004
@@ -12,6 +12,6 @@ spec:
     protocol: TCP
     targetPort: 8080
   selector:
-    app: rConfig
+    app: rconfig
   type: NodePort
 
