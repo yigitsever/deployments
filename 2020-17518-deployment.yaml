@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cve-2020-17518
+  labels:
+    app: flink
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flink
+  template:
+    metadata:
+      labels:
+        app: flink
+    spec:
+      containers:
+      - name: flink
+        image: vulhub/flink:1.11.2
+        ports:
+        - containerPort: 8081
+# https://github.com/vulhub/vulhub/blob/master/flink/CVE-2020-17518/docker-compose.yml
+# We might need 6123 as well
