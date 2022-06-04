@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cve-2019-16662
+  labels:
+    app: rConfig
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rConfig
+  template:
+    metadata:
+      labels:
+        app: rConfig
+    spec:
+      containers:
+      - name: rConfig
+        image: fab1ano/cve-2019-16662:latest
+        ports:
+        - containerPort: 8080
