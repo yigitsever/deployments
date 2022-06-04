@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cve-2019-7543 
+  labels:
+    app: kindeditor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kindeditor
+  template:
+    metadata:
+      labels:
+        app: kindeditor
+    spec:
+      containers:
+      - name: kindeditor
+        image: vulfocus/kindeditor-cve_2018_18950:latest 
+        ports:
+        - containerPort: 80
